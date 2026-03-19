@@ -4,45 +4,41 @@
 <meta charset="UTF-8">
 <title>Tharun Kumar Karnati | DevOps Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- AOS Animation -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
 <style>
 html { scroll-behavior: smooth; }
 
+:root {
+  --bg: #0a0f1c;
+  --card: #111827;
+  --accent: #22c55e;
+  --text: #e5e7eb;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(2,6,23,0.7);
+  background: rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
-  padding: 15px 0;
   text-align: center;
-  z-index: 1000;
+  padding: 15px;
 }
 
 nav a {
-  color: #38bdf8;
-  margin: 0 20px;
+  color: var(--accent);
+  margin: 0 15px;
   text-decoration: none;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: white;
 }
 
 /* HERO */
@@ -52,73 +48,39 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #020617, #0f172a);
-  text-align: center;
 }
 
 .hero h1 {
-  font-size: 52px;
-  margin: 0;
+  font-size: 50px;
 }
 
-.hero p {
-  margin-top: 10px;
-  color: #94a3b8;
-}
-
-.buttons {
-  margin-top: 25px;
-}
-
-.btn {
-  padding: 12px 22px;
-  margin: 10px;
+/* BUTTONS */
+.theme-buttons button {
+  margin: 5px;
+  padding: 8px 12px;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
-  font-weight: 500;
-}
-
-.btn-primary {
-  background: #38bdf8;
-  color: black;
-}
-
-.btn-outline {
-  background: transparent;
-  border: 1px solid #38bdf8;
-  color: #38bdf8;
 }
 
 /* SECTION */
 section {
-  max-width: 1000px;
+  max-width: 800px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 100px 20px;
 }
 
-h2 {
-  color: #38bdf8;
-}
+h2 { color: var(--accent); }
 
-/* CARDS */
 .card {
-  background: #1e293b;
+  background: var(--card);
   padding: 20px;
-  margin: 20px 0;
-  border-radius: 12px;
+  margin: 15px 0;
+  border-radius: 10px;
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  background: #334155;
-}
-
-/* ICONS */
-.icon {
-  margin-right: 10px;
-  color: #38bdf8;
+  transform: translateY(-4px);
 }
 
 /* FOOTER */
@@ -132,7 +94,6 @@ footer {
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#home">Home</a>
   <a href="#experience">Experience</a>
@@ -140,60 +101,46 @@ footer {
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
-<div class="hero" id="home" data-aos="fade-up">
+<div class="hero" id="home">
   <h1>Tharun Kumar Karnati</h1>
   <p>Senior DevOps Engineer | AWS | Kubernetes | Terraform</p>
 
-  <div class="buttons">
-    <button class="btn btn-primary" onclick="document.getElementById('experience').scrollIntoView()">View Work</button>
-    <a href="resume.pdf" target="_blank">
-      <button class="btn btn-outline">Download Resume</button>
-    </a>
+  <!-- Theme Switch -->
+  <div class="theme-buttons">
+    <button onclick="setTheme('green')">🟢 DevOps</button>
+    <button onclick="setTheme('blue')">🔵 Blue</button>
+    <button onclick="setTheme('purple')">🟣 Purple</button>
   </div>
 </div>
 
-<!-- EXPERIENCE -->
 <section id="experience">
-  <h2 data-aos="fade-right">💼 Experience</h2>
+  <h2>Experience</h2>
 
-  <div class="card" data-aos="fade-up">
-    <i class="fa-solid fa-cloud icon"></i>
-    <b>Innominds (2023 – Present)</b><br>
-    Built CI/CD pipelines reducing errors by 70%, deployed microservices on AWS EKS, automated infra using Terraform.
+  <div class="card">
+    <b>Innominds</b><br>
+    Reduced deployment errors by 70%, deployed EKS microservices, automated infra using Terraform.
   </div>
 
-  <div class="card" data-aos="fade-up">
-    <i class="fa-solid fa-server icon"></i>
-    <b>TALKD (2021 – 2023)</b><br>
-    Managed AWS infra with 99.9% uptime, built Jenkins pipelines, migrated monolithic apps to microservices.
-  </div>
-
-  <div class="card" data-aos="fade-up">
-    <i class="fa-solid fa-network-wired icon"></i>
-    <b>Icroz (2017 – 2021)</b><br>
-    Automated CI/CD, designed Azure networking, improved uptime to 99.95%.
+  <div class="card">
+    <b>TALKD</b><br>
+    Managed AWS infra (99.9% uptime), built CI/CD pipelines, microservices migration.
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
-  <h2 data-aos="fade-right">🛠 Skills</h2>
+  <h2>Skills</h2>
 
-  <div class="card" data-aos="fade-up">AWS | Azure | GCP</div>
-  <div class="card" data-aos="fade-up">Docker | Kubernetes | EKS</div>
-  <div class="card" data-aos="fade-up">Terraform | CloudFormation</div>
-  <div class="card" data-aos="fade-up">Jenkins | GitHub Actions</div>
+  <div class="card">AWS | Azure | GCP</div>
+  <div class="card">Docker | Kubernetes</div>
+  <div class="card">Terraform | CloudFormation</div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-  <h2 data-aos="fade-right">📞 Contact</h2>
+  <h2>Contact</h2>
 
-  <div class="card" data-aos="fade-up">
-    <i class="fa-solid fa-envelope icon"></i> visionary6870@gmail.com <br><br>
-    <i class="fa-brands fa-linkedin icon"></i> linkedin.com/in/tharunkumar-31304b123 <br><br>
-    <i class="fa-brands fa-github icon"></i> github.com/tharunkumarkarnati
+  <div class="card">
+    visionary6870@gmail.com <br>
+    linkedin.com/in/tharunkumar-31304b123
   </div>
 </section>
 
@@ -201,13 +148,24 @@ footer {
   © 2026 Tharun Kumar Karnati
 </footer>
 
-<!-- AOS Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-AOS.init({
-  duration: 1000,
-  once: true
-});
+function setTheme(theme) {
+  if (theme === 'green') {
+    document.documentElement.style.setProperty('--bg', '#0a0f1c');
+    document.documentElement.style.setProperty('--card', '#111827');
+    document.documentElement.style.setProperty('--accent', '#22c55e');
+  }
+  if (theme === 'blue') {
+    document.documentElement.style.setProperty('--bg', '#0b1220');
+    document.documentElement.style.setProperty('--card', '#1e293b');
+    document.documentElement.style.setProperty('--accent', '#3b82f6');
+  }
+  if (theme === 'purple') {
+    document.documentElement.style.setProperty('--bg', '#0f0a1f');
+    document.documentElement.style.setProperty('--card', '#1a1333');
+    document.documentElement.style.setProperty('--accent', '#8b5cf6');
+  }
+}
 </script>
 
 </body>
