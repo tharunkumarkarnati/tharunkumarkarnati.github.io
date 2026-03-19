@@ -2,26 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tharun Kumar Karnati | DevOps Engineer</title>
+<title>Tharun Kumar Karnati</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-html { scroll-behavior: smooth; }
-
-:root {
-  --bg: #0a0f1c;
-  --card: #111827;
-  --accent: #22c55e;
-  --text: #e5e7eb;
-}
-
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  background: #0b1220;
+  color: #e5e7eb;
 }
 
 /* NAV */
@@ -29,65 +19,73 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
+  padding: 20px 0;
   text-align: center;
-  padding: 15px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
 }
 
 nav a {
-  color: var(--accent);
-  margin: 0 15px;
+  margin: 0 20px;
   text-decoration: none;
+  color: #9ca3af;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 0 10%;
 }
 
 .hero h1 {
-  font-size: 50px;
+  font-size: 60px;
+  line-height: 1.2;
 }
 
-/* BUTTONS */
-.theme-buttons button {
-  margin: 5px;
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
+.hero p {
+  margin-top: 15px;
+  color: #9ca3af;
+  font-size: 18px;
 }
 
 /* SECTION */
-section {
-  max-width: 800px;
-  margin: auto;
-  padding: 100px 20px;
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 10%;
+  gap: 50px;
 }
 
-h2 { color: var(--accent); }
+.text {
+  max-width: 500px;
+}
 
-.card {
-  background: var(--card);
-  padding: 20px;
-  margin: 15px 0;
+.text h2 {
+  font-size: 32px;
+}
+
+.text p {
+  color: #9ca3af;
+}
+
+/* CARD VISUAL */
+.box {
+  width: 300px;
+  height: 200px;
+  background: #111827;
   border-radius: 10px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  color: gray;
+  padding: 40px;
+  color: #6b7280;
 }
 </style>
 </head>
@@ -95,78 +93,59 @@ footer {
 <body>
 
 <nav>
-  <a href="#home">Home</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
+  <a href="#">Home</a>
+  <a href="#">Experience</a>
+  <a href="#">Skills</a>
+  <a href="#">Contact</a>
 </nav>
 
-<div class="hero" id="home">
-  <h1>Tharun Kumar Karnati</h1>
-  <p>Senior DevOps Engineer | AWS | Kubernetes | Terraform</p>
-
-  <!-- Theme Switch -->
-  <div class="theme-buttons">
-    <button onclick="setTheme('green')">🟢 DevOps</button>
-    <button onclick="setTheme('blue')">🔵 Blue</button>
-    <button onclick="setTheme('purple')">🟣 Purple</button>
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Building scalable cloud systems with DevOps excellence</h1>
+    <p>Senior DevOps Engineer specializing in AWS, Kubernetes, and Infrastructure Automation</p>
   </div>
 </div>
 
-<section id="experience">
-  <h2>Experience</h2>
-
-  <div class="card">
-    <b>Innominds</b><br>
-    Reduced deployment errors by 70%, deployed EKS microservices, automated infra using Terraform.
+<!-- SECTION 1 -->
+<div class="section">
+  <div class="text">
+    <h2>Cloud Infrastructure</h2>
+    <p>Designed and deployed scalable AWS and Azure infrastructure using Terraform and automation tools.</p>
   </div>
+  <div class="box"></div>
+</div>
 
-  <div class="card">
-    <b>TALKD</b><br>
-    Managed AWS infra (99.9% uptime), built CI/CD pipelines, microservices migration.
+<!-- SECTION 2 -->
+<div class="section">
+  <div class="box"></div>
+  <div class="text">
+    <h2>CI/CD Automation</h2>
+    <p>Implemented enterprise-grade CI/CD pipelines reducing deployment failures and improving release cycles.</p>
   </div>
-</section>
+</div>
 
-<section id="skills">
-  <h2>Skills</h2>
-
-  <div class="card">AWS | Azure | GCP</div>
-  <div class="card">Docker | Kubernetes</div>
-  <div class="card">Terraform | CloudFormation</div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-
-  <div class="card">
-    visionary6870@gmail.com <br>
-    linkedin.com/in/tharunkumar-31304b123
+<!-- SECTION 3 -->
+<div class="section">
+  <div class="text">
+    <h2>Kubernetes & Scaling</h2>
+    <p>Managed EKS clusters, autoscaling, and microservices architecture ensuring high availability.</p>
   </div>
-</section>
+  <div class="box"></div>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+  <div class="text">
+    <h2>Contact</h2>
+    <p>visionary6870@gmail.com</p>
+    <p>linkedin.com/in/tharunkumar-31304b123</p>
+  </div>
+</div>
 
 <footer>
   © 2026 Tharun Kumar Karnati
 </footer>
-
-<script>
-function setTheme(theme) {
-  if (theme === 'green') {
-    document.documentElement.style.setProperty('--bg', '#0a0f1c');
-    document.documentElement.style.setProperty('--card', '#111827');
-    document.documentElement.style.setProperty('--accent', '#22c55e');
-  }
-  if (theme === 'blue') {
-    document.documentElement.style.setProperty('--bg', '#0b1220');
-    document.documentElement.style.setProperty('--card', '#1e293b');
-    document.documentElement.style.setProperty('--accent', '#3b82f6');
-  }
-  if (theme === 'purple') {
-    document.documentElement.style.setProperty('--bg', '#0f0a1f');
-    document.documentElement.style.setProperty('--card', '#1a1333');
-    document.documentElement.style.setProperty('--accent', '#8b5cf6');
-  }
-}
-</script>
 
 </body>
 </html>
