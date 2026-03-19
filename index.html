@@ -7,11 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0b1220;
+  background: #050816;
   color: #e5e7eb;
+  overflow-x: hidden;
 }
 
 /* NAV */
@@ -19,16 +22,22 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 20px 0;
-  text-align: center;
-  background: rgba(0,0,0,0.5);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(5,8,22,0.7);
   backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+nav span {
+  font-weight: 600;
 }
 
 nav a {
-  margin: 0 20px;
-  text-decoration: none;
+  margin-left: 20px;
   color: #9ca3af;
+  text-decoration: none;
 }
 
 /* HERO */
@@ -36,29 +45,51 @@ nav a {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: left;
+  justify-content: space-between;
   padding: 0 10%;
 }
 
-.hero h1 {
+/* LEFT TEXT */
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
   font-size: 60px;
   line-height: 1.2;
 }
 
-.hero p {
+.hero-text p {
   margin-top: 15px;
   color: #9ca3af;
   font-size: 18px;
 }
 
+/* RIGHT VISUAL */
+.hero-visual {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #22c55e33, transparent 70%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
 /* SECTION */
 .section {
+  padding: 120px 10%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 100px 10%;
-  gap: 50px;
+  align-items: center;
+  gap: 60px;
+}
+
+.section:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 .text {
@@ -71,21 +102,46 @@ nav a {
 
 .text p {
   color: #9ca3af;
+  margin-top: 10px;
 }
 
-/* CARD VISUAL */
+/* VISUAL BOX */
 .box {
-  width: 300px;
-  height: 200px;
-  background: #111827;
-  border-radius: 10px;
+  width: 320px;
+  height: 220px;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(34,197,94,0.1);
+  transition: 0.5s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 100px 20px;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 40px;
+  padding: 30px;
   color: #6b7280;
+}
+
+/* SCROLL ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
@@ -93,59 +149,71 @@ footer {
 <body>
 
 <nav>
-  <a href="#">Home</a>
-  <a href="#">Experience</a>
-  <a href="#">Skills</a>
-  <a href="#">Contact</a>
+  <span>Tharun Kumar</span>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div>
-    <h1>Building scalable cloud systems with DevOps excellence</h1>
-    <p>Senior DevOps Engineer specializing in AWS, Kubernetes, and Infrastructure Automation</p>
+<div class="hero" id="home">
+  <div class="hero-text fade">
+    <h1>Engineering scalable cloud platforms with DevOps excellence</h1>
+    <p>Senior DevOps Engineer specializing in AWS, Kubernetes, and automation</p>
   </div>
+  <div class="hero-visual"></div>
 </div>
 
-<!-- SECTION 1 -->
-<div class="section">
+<!-- SECTION -->
+<div class="section fade" id="work">
   <div class="text">
     <h2>Cloud Infrastructure</h2>
-    <p>Designed and deployed scalable AWS and Azure infrastructure using Terraform and automation tools.</p>
+    <p>Designed scalable AWS and Azure infrastructure using Terraform and automation.</p>
   </div>
   <div class="box"></div>
 </div>
 
-<!-- SECTION 2 -->
-<div class="section">
-  <div class="box"></div>
+<div class="section fade">
   <div class="text">
     <h2>CI/CD Automation</h2>
-    <p>Implemented enterprise-grade CI/CD pipelines reducing deployment failures and improving release cycles.</p>
+    <p>Implemented enterprise pipelines reducing deployment failures and improving delivery.</p>
   </div>
+  <div class="box"></div>
 </div>
 
-<!-- SECTION 3 -->
-<div class="section">
+<div class="section fade">
   <div class="text">
-    <h2>Kubernetes & Scaling</h2>
-    <p>Managed EKS clusters, autoscaling, and microservices architecture ensuring high availability.</p>
+    <h2>Kubernetes Scaling</h2>
+    <p>Managed EKS clusters with autoscaling and high availability architecture.</p>
   </div>
   <div class="box"></div>
 </div>
 
 <!-- CONTACT -->
-<div class="section">
-  <div class="text">
-    <h2>Contact</h2>
-    <p>visionary6870@gmail.com</p>
-    <p>linkedin.com/in/tharunkumar-31304b123</p>
-  </div>
+<div class="contact fade" id="contact">
+  <h2>Get in touch</h2>
+  <p>visionary6870@gmail.com</p>
+  <p>linkedin.com/in/tharunkumar-31304b123</p>
 </div>
 
 <footer>
   © 2026 Tharun Kumar Karnati
 </footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  const trigger = window.innerHeight * 0.85;
+
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < trigger) el.classList.add('show');
+  });
+});
+</script>
 
 </body>
 </html>
