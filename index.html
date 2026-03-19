@@ -2,64 +2,79 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tharun Kumar Karnati | DevOps Engineer</title>
+<title>Tharun Kumar Karnati</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #0f172a;
-  color: #e2e8f0;
+  color: #fff;
 }
 
 /* NAVBAR */
 nav {
   position: fixed;
   width: 100%;
-  background: #020617;
+  top: 0;
+  background: rgba(2,6,23,0.9);
+  backdrop-filter: blur(10px);
   padding: 15px 0;
   text-align: center;
-  top: 0;
   z-index: 1000;
 }
 
 nav a {
   color: #38bdf8;
-  margin: 0 15px;
+  margin: 0 20px;
   text-decoration: none;
   font-weight: 500;
+  transition: 0.3s;
 }
 
 nav a:hover {
   color: white;
 }
 
-/* HEADER */
-header {
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
-  padding: 120px 20px 80px;
 }
 
-h1 {
-  font-size: 42px;
+.hero h1 {
+  font-size: 50px;
   margin: 0;
 }
 
-h2 {
-  color: #38bdf8;
+.hero p {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #38bdf8;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* SECTION */
 section {
-  max-width: 900px;
+  padding: 80px 20px;
+  max-width: 1000px;
   margin: auto;
-  padding: 60px 20px;
 }
 
 /* CARDS */
@@ -68,21 +83,23 @@ section {
   padding: 20px;
   margin: 20px 0;
   border-radius: 12px;
-  transform: translateY(30px);
-  opacity: 0;
-  transition: all 0.6s ease;
+  transition: 0.4s;
 }
 
-/* ANIMATION ACTIVE */
-.card.show {
-  transform: translateY(0);
-  opacity: 1;
+.card:hover {
+  transform: translateY(-5px);
+  background: #334155;
+}
+
+/* TITLES */
+h2 {
+  color: #38bdf8;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   color: gray;
 }
 </style>
@@ -90,92 +107,64 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
   <a href="#home">Home</a>
   <a href="#experience">Experience</a>
   <a href="#skills">Skills</a>
-  <a href="#achievements">Achievements</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- HEADER -->
-<header id="home">
+<!-- HERO -->
+<div class="hero" id="home">
   <h1>Tharun Kumar Karnati</h1>
-  <p>Senior DevOps Engineer | AWS | GCP | Kubernetes | Terraform</p>
-</header>
+  <p>Senior DevOps Engineer | AWS | Kubernetes | Terraform</p>
+  <button onclick="document.getElementById('experience').scrollIntoView()">View My Work</button>
+</div>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <h2>💼 Professional Experience</h2>
+  <h2>Experience</h2>
 
   <div class="card">
-    <b>Innominds (2023 – Present)</b><br><br>
-    Reduced deployment errors by 70% with CI/CD pipelines, deployed microservices on EKS, automated infra using Terraform.
+    <b>Innominds</b><br>
+    Reduced deployment errors by 70%, deployed microservices on EKS, automated infra using Terraform.
   </div>
 
   <div class="card">
-    <b>TALKD (2021 – 2023)</b><br><br>
-    Managed AWS infra with 99.9% uptime, built Jenkins pipelines, migrated apps to microservices.
+    <b>TALKD</b><br>
+    Managed AWS infra (99.9% uptime), built Jenkins pipelines, migrated to microservices.
   </div>
 
   <div class="card">
-    <b>Icroz Solutions (2017 – 2021)</b><br><br>
-    Automated CI/CD, designed Azure networking, improved uptime to 99.95%.
+    <b>Icroz</b><br>
+    Automated CI/CD, designed Azure infra, improved uptime to 99.95%.
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <h2>🛠 Skills</h2>
+  <h2>Skills</h2>
 
-  <div class="card">Cloud: AWS, Azure, GCP</div>
-  <div class="card">CI/CD: Jenkins, GitHub Actions, Azure DevOps</div>
-  <div class="card">Containers: Docker, Kubernetes, EKS</div>
-  <div class="card">IaC: Terraform, CloudFormation</div>
-  <div class="card">Monitoring: Prometheus, Grafana, CloudWatch</div>
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section id="achievements">
-  <h2>🚀 Key Achievements</h2>
-
-  <div class="card">Reduced deployment errors by 70%</div>
-  <div class="card">Improved provisioning speed by 50%</div>
-  <div class="card">Achieved 99.9% uptime</div>
-  <div class="card">Handled zero downtime migrations</div>
+  <div class="card">AWS | Azure | GCP</div>
+  <div class="card">Docker | Kubernetes | EKS</div>
+  <div class="card">Terraform | CloudFormation</div>
+  <div class="card">Jenkins | GitHub Actions</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>📞 Contact</h2>
+  <h2>Contact</h2>
 
   <div class="card">
-    Email: visionary6870@gmail.com <br>
-    LinkedIn: linkedin.com/in/tharunkumar-31304b123
+    visionary6870@gmail.com <br>
+    linkedin.com/in/tharunkumar-31304b123
   </div>
 </section>
 
 <footer>
   © 2026 Tharun Kumar Karnati
 </footer>
-
-<!-- JS FOR ANIMATION -->
-<script>
-const cards = document.querySelectorAll('.card');
-
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight * 0.85;
-
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-
-    if (top < trigger) {
-      card.classList.add('show');
-    }
-  });
-});
-</script>
 
 </body>
 </html>
