@@ -1,149 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tharun Kumar Karnati | DevOps Engineer</title>
+<meta charset="UTF-8">
+<title>Tharun Kumar Karnati | DevOps Engineer</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
+<style>
+html {
+  scroll-behavior: smooth;
+}
 
-    header {
-      text-align: center;
-      padding: 80px 20px;
-    }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
 
-    h1 {
-      font-size: 40px;
-      margin: 0;
-    }
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  background: #020617;
+  padding: 15px 0;
+  text-align: center;
+  top: 0;
+  z-index: 1000;
+}
 
-    h2 {
-      color: #38bdf8;
-    }
+nav a {
+  color: #38bdf8;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+nav a:hover {
+  color: white;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 10px;
-    }
+/* HEADER */
+header {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: gray;
-    }
-  </style>
+h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+h2 {
+  color: #38bdf8;
+}
+
+/* SECTION */
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* CARDS */
+.card {
+  background: #1e293b;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+/* ANIMATION ACTIVE */
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: gray;
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<!-- NAVBAR -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HEADER -->
+<header id="home">
   <h1>Tharun Kumar Karnati</h1>
   <p>Senior DevOps Engineer | AWS | GCP | Kubernetes | Terraform</p>
 </header>
 
-<section>
+<!-- EXPERIENCE -->
+<section id="experience">
   <h2>💼 Professional Experience</h2>
 
   <div class="card">
-    <b>Senior DevOps Engineer – Innominds (2023 – Present)</b><br><br>
-    • Reduced deployment errors by 70% by building CI/CD pipelines using Azure DevOps and GitHub<br>
-    • Deployed 15+ microservices on AWS EKS with ingress and load balancing<br>
-    • Implemented Terraform-based infrastructure provisioning reducing setup time by 50%<br>
-    • Integrated Prometheus & Grafana for monitoring and faster incident response<br>
-    • Led AWS account migration ensuring zero downtime
+    <b>Innominds (2023 – Present)</b><br><br>
+    Reduced deployment errors by 70% with CI/CD pipelines, deployed microservices on EKS, automated infra using Terraform.
   </div>
 
   <div class="card">
-    <b>DevOps Engineer – TALKD (2021 – 2023)</b><br><br>
-    • Managed AWS infrastructure with 99.9% uptime across EKS, EC2, RDS, CloudFront<br>
-    • Built CI/CD pipelines using Jenkins with SonarQube integration<br>
-    • Migrated monolithic applications to microservices architecture<br>
-    • Reduced build downtime by 25% through pipeline optimization
+    <b>TALKD (2021 – 2023)</b><br><br>
+    Managed AWS infra with 99.9% uptime, built Jenkins pipelines, migrated apps to microservices.
   </div>
 
   <div class="card">
-    <b>DevOps Engineer – Icroz Solutions (2017 – 2021)</b><br><br>
-    • Automated CI/CD pipelines using Jenkins, Maven, and Ansible<br>
-    • Designed secure Azure networking (VNet, NSG, Load Balancer)<br>
-    • Improved system uptime to 99.95% through monitoring and scaling strategies<br>
-    • Reduced cloud costs by 25% using storage lifecycle policies
-  </div>
-
-</section>
-
-<section>
-  <h2>🛠 Technical Skills</h2>
-
-  <div class="card">
-    <b>Cloud:</b> AWS, Azure, GCP
-  </div>
-
-  <div class="card">
-    <b>CI/CD:</b> Jenkins, GitHub Actions, Azure DevOps
-  </div>
-
-  <div class="card">
-    <b>Containers:</b> Docker, Kubernetes, EKS
-  </div>
-
-  <div class="card">
-    <b>IaC:</b> Terraform, CloudFormation, Ansible
-  </div>
-
-  <div class="card">
-    <b>Monitoring:</b> Prometheus, Grafana, CloudWatch, Datadog
+    <b>Icroz Solutions (2017 – 2021)</b><br><br>
+    Automated CI/CD, designed Azure networking, improved uptime to 99.95%.
   </div>
 </section>
 
-<section>
+<!-- SKILLS -->
+<section id="skills">
+  <h2>🛠 Skills</h2>
+
+  <div class="card">Cloud: AWS, Azure, GCP</div>
+  <div class="card">CI/CD: Jenkins, GitHub Actions, Azure DevOps</div>
+  <div class="card">Containers: Docker, Kubernetes, EKS</div>
+  <div class="card">IaC: Terraform, CloudFormation</div>
+  <div class="card">Monitoring: Prometheus, Grafana, CloudWatch</div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
   <h2>🚀 Key Achievements</h2>
 
-  <div class="card">
-    Reduced deployment errors by 70% using automated CI/CD pipelines
-  </div>
-
-  <div class="card">
-    Improved infrastructure provisioning speed by 50% using Terraform
-  </div>
-
-  <div class="card">
-    Achieved 99.9% uptime managing large-scale AWS infrastructure
-  </div>
-
-  <div class="card">
-    Successfully migrated AWS accounts and repositories with zero downtime
-  </div>
-
+  <div class="card">Reduced deployment errors by 70%</div>
+  <div class="card">Improved provisioning speed by 50%</div>
+  <div class="card">Achieved 99.9% uptime</div>
+  <div class="card">Handled zero downtime migrations</div>
 </section>
 
-<section>
+<!-- CONTACT -->
+<section id="contact">
   <h2>📞 Contact</h2>
+
   <div class="card">
     Email: visionary6870@gmail.com <br>
-    LinkedIn: https://linkedin.com/in/tharunkumar-31304b123
+    LinkedIn: linkedin.com/in/tharunkumar-31304b123
   </div>
 </section>
 
 <footer>
   © 2026 Tharun Kumar Karnati
 </footer>
+
+<!-- JS FOR ANIMATION -->
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+  const trigger = window.innerHeight * 0.85;
+
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+
+    if (top < trigger) {
+      card.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
