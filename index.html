@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tharun Kumar Karnati</title>
+<title>Tharun Kumar Karnati | DevOps Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- AOS Animation -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
 <style>
 html { scroll-behavior: smooth; }
@@ -13,7 +19,7 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #0f172a;
-  color: #fff;
+  color: #e2e8f0;
 }
 
 /* NAVBAR */
@@ -21,7 +27,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(2,6,23,0.9);
+  background: rgba(2,6,23,0.7);
   backdrop-filter: blur(10px);
   padding: 15px 0;
   text-align: center;
@@ -33,7 +39,6 @@ nav a {
   margin: 0 20px;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
 }
 
 nav a:hover {
@@ -44,14 +49,15 @@ nav a:hover {
 .hero {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  background: linear-gradient(135deg, #020617, #0f172a);
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 50px;
+  font-size: 52px;
   margin: 0;
 }
 
@@ -60,21 +66,39 @@ nav a:hover {
   color: #94a3b8;
 }
 
-.hero button {
-  margin-top: 20px;
-  padding: 10px 20px;
+.buttons {
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 12px 22px;
+  margin: 10px;
   border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-primary {
   background: #38bdf8;
   color: black;
-  border-radius: 5px;
-  cursor: pointer;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
 }
 
 /* SECTION */
 section {
-  padding: 80px 20px;
   max-width: 1000px;
   margin: auto;
+  padding: 80px 20px;
+}
+
+h2 {
+  color: #38bdf8;
 }
 
 /* CARDS */
@@ -83,23 +107,24 @@ section {
   padding: 20px;
   margin: 20px 0;
   border-radius: 12px;
-  transition: 0.4s;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   background: #334155;
 }
 
-/* TITLES */
-h2 {
+/* ICONS */
+.icon {
+  margin-right: 10px;
   color: #38bdf8;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   color: gray;
 }
 </style>
@@ -116,55 +141,74 @@ footer {
 </nav>
 
 <!-- HERO -->
-<div class="hero" id="home">
+<div class="hero" id="home" data-aos="fade-up">
   <h1>Tharun Kumar Karnati</h1>
   <p>Senior DevOps Engineer | AWS | Kubernetes | Terraform</p>
-  <button onclick="document.getElementById('experience').scrollIntoView()">View My Work</button>
+
+  <div class="buttons">
+    <button class="btn btn-primary" onclick="document.getElementById('experience').scrollIntoView()">View Work</button>
+    <a href="resume.pdf" target="_blank">
+      <button class="btn btn-outline">Download Resume</button>
+    </a>
+  </div>
 </div>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <h2>Experience</h2>
+  <h2 data-aos="fade-right">💼 Experience</h2>
 
-  <div class="card">
-    <b>Innominds</b><br>
-    Reduced deployment errors by 70%, deployed microservices on EKS, automated infra using Terraform.
+  <div class="card" data-aos="fade-up">
+    <i class="fa-solid fa-cloud icon"></i>
+    <b>Innominds (2023 – Present)</b><br>
+    Built CI/CD pipelines reducing errors by 70%, deployed microservices on AWS EKS, automated infra using Terraform.
   </div>
 
-  <div class="card">
-    <b>TALKD</b><br>
-    Managed AWS infra (99.9% uptime), built Jenkins pipelines, migrated to microservices.
+  <div class="card" data-aos="fade-up">
+    <i class="fa-solid fa-server icon"></i>
+    <b>TALKD (2021 – 2023)</b><br>
+    Managed AWS infra with 99.9% uptime, built Jenkins pipelines, migrated monolithic apps to microservices.
   </div>
 
-  <div class="card">
-    <b>Icroz</b><br>
-    Automated CI/CD, designed Azure infra, improved uptime to 99.95%.
+  <div class="card" data-aos="fade-up">
+    <i class="fa-solid fa-network-wired icon"></i>
+    <b>Icroz (2017 – 2021)</b><br>
+    Automated CI/CD, designed Azure networking, improved uptime to 99.95%.
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <h2>Skills</h2>
+  <h2 data-aos="fade-right">🛠 Skills</h2>
 
-  <div class="card">AWS | Azure | GCP</div>
-  <div class="card">Docker | Kubernetes | EKS</div>
-  <div class="card">Terraform | CloudFormation</div>
-  <div class="card">Jenkins | GitHub Actions</div>
+  <div class="card" data-aos="fade-up">AWS | Azure | GCP</div>
+  <div class="card" data-aos="fade-up">Docker | Kubernetes | EKS</div>
+  <div class="card" data-aos="fade-up">Terraform | CloudFormation</div>
+  <div class="card" data-aos="fade-up">Jenkins | GitHub Actions</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
+  <h2 data-aos="fade-right">📞 Contact</h2>
 
-  <div class="card">
-    visionary6870@gmail.com <br>
-    linkedin.com/in/tharunkumar-31304b123
+  <div class="card" data-aos="fade-up">
+    <i class="fa-solid fa-envelope icon"></i> visionary6870@gmail.com <br><br>
+    <i class="fa-brands fa-linkedin icon"></i> linkedin.com/in/tharunkumar-31304b123 <br><br>
+    <i class="fa-brands fa-github icon"></i> github.com/tharunkumarkarnati
   </div>
 </section>
 
 <footer>
   © 2026 Tharun Kumar Karnati
 </footer>
+
+<!-- AOS Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({
+  duration: 1000,
+  once: true
+});
+</script>
 
 </body>
 </html>
